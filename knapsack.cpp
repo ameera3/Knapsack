@@ -57,7 +57,10 @@ int knapsack(int W, vector<int>& values, vector<int>& weights) {
 	int result = A[W][n];
 
 	// no memory leaks here
-	delete[] A;
+	for(int i = 0; i < W+1; ++i) {
+		delete [] A[i];
+	}
+	delete [] A;
 
 	return result;
 
